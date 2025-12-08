@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Как самому создать сайт - Мой проект</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #575757;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        .background-gif {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif') center/cover no-repeat;
+            opacity: 0.2;
+            z-index: -1;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.822);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border: 2px solid #4CAF50;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px dashed #4CAF50;
+        }
+        
+        h1 {
+            color: #2E7D32;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        h2 {
+            color: #388E3C;
+            margin: 25px 0 15px 0;
+            padding-left: 10px;
+            border-left: 5px solid #4CAF50;
+        }
+        
+        h3 {
+            color: #43A047;
+            margin: 20px 0 10px 0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        .steps {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #ddd;
+        }
+        
+        .step {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px dotted #ccc;
+        }
+        
+        .step:last-child {
+            border-bottom: none;
+        }
+        
+        .code-box {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-size: 14px;
+        }
+        
+        .important {
+            background-color: #e8f5e9;
+            border-left: 4px solid #4CAF50;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .tip {
+            background-color: #fffde7;
+            border-left: 4px solid #ffd600;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        a {
+            color: #1B5E20;
+            font-weight: bold;
+        }
+        
+        a:hover {
+            color: #4CAF50;
+        }
+        
+        .resources {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px dashed #ccc;
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .my-note {
+            background-color: #fff3e0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border: 1px solid #ffb74d;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 5px;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: #388E3C;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        nav a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .code-box {
+                font-size: 12px;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-gif"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Как самому создать сайт с нуля</h1>
+            <p>Мой проект по изучению веб-разработки. Здесь я собрал всё, что узнал о создании сайтов.</p>
+            
+            <nav>
+                <a href="#basics" class="btn">Основы</a>
+                <a href="#steps" class="btn">Шаги создания</a>
+                <a href="#code" class="btn">Примеры кода</a>
+                <a href="#resources" class="btn">Ресурсы</a>
+            </nav>
+        </header>
+        
+        <div class="my-note">
+            <p><strong>Примечание:</strong> Это мой личный проект, который я делаю, чтобы научиться создавать сайты.</p>
+        </div>
+        
+        <section id="basics">
+            <h2>Основы создания сайтов</h2>
+            <p>Сайт состоит из трёх основных технологий:</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <h3>HTML (HyperText Markup Language)</h3>
+                    <p>Это "скелет" сайта. HTML определяет структуру: заголовки, параграфы, ссылки, изображения и т.д.</p>
+                </div>
+                
+                <div class="step">
+                    <h3>CSS (Cascading Style Sheets)</h3>
+                    <p>Это "внешний вид" сайта. CSS отвечает за цвета, шрифты, расположение элементов.</p>
+                </div>
+                
+                <div class="step">
+                    <h3>JavaScript</h3>
+                    <p>Это "поведение" сайта. JavaScript делает сайт интерактивным: кнопки, анимации, формы.</p>
+                </div>
+            </div>
+            
+            <div class="important">
+                <p><strong>Важно:</strong> Для начала достаточно HTML и CSS! JavaScript можно изучить позже.</p>
+            </div>
+        </section>
+        
+        <section id="steps">
+            <h2>Пошаговое создание сайта</h2>
+            
+            <ol>
+                <li><strong>Создайте папку для проекта</strong> на своём компьютере</li>
+                <li><strong>Создайте файл index.html</strong> - это главная страница сайта</li>
+                <li><strong>Создайте файл style.css</strong> - для стилей сайта</li>
+                <li><strong>Напишите базовую структуру HTML</strong> (см. пример ниже)</li>
+                <li><strong>Добавьте содержимое</strong> - текст, заголовки, изображения</li>
+                <li><strong>Оформите сайт с помощью CSS</strong> - задайте цвета, шрифты, отступы</li>
+                <li><strong>Протестируйте сайт</strong> - откройте index.html в браузере</li>
+            </ol>
+            
+            <div class="tip">
+                <p><strong>Совет:</strong> Для написания кода используйте простые редакторы вроде Notepad++, Sublime Text или VS Code (я использую последний).</p>
+            </div>
+        </section>
+        
+        <section id="code">
+            <h2>Примеры кода для начала</h2>
+            
+            <h3>Базовая структура HTML</h3>
+            <div class="code-box">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ru"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Мой первый сайт&lt;/title&gt;
+    &lt;link rel="stylesheet" href="style.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Привет, мир!&lt;/h1&gt;
+    &lt;p&gt;Это мой первый сайт.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+            </div>
+            
+            <h3>Простой CSS для стилей</h3>
+            <div class="code-box">
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+h1 {
+    color: #2E7D32;
+    text-align: center;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 18px;
+}
+            </div>
+            
+            <h3>Как добавить GIF на фон (как у этого сайта)</h3>
+            <div class="code-box">
+&lt;style&gt;
+    body {
+        background-image: url('ваша-гифка.gif');
+        background-repeat: repeat;
+        /* или no-repeat для одной гифки */
+        background-size: cover; /* растянуть на весь экран */
+        opacity: 0.1; /* прозрачность */
+    }
+&lt;/style&gt;
+            </div>
+        </section>
+        
+        <section id="resources">
+            <div class="resources">
+                <h2>Полезные ресурсы для обучения</h2>
+                
+                <p>Вот что мне помогло научиться (все ресурсы бесплатные):</p>
+                
+                <ul>
+                    <li><a href="https://htmlbook.ru/" target="_blank">HTMLbook</a> - отличный справочник по HTML и CSS на русском</li>
+                    <li><a href="https://learn.javascript.ru/" target="_blank">Современный учебник JavaScript</a> - лучший учебник по JS</li>
+                    <li><a href="https://developer.mozilla.org/ru/" target="_blank">MDN Web Docs</a> - официальная документация</li>
+                </ul>
+                
+                <div class="tip">
+                    <p><strong>Мой опыт:</strong> Я начал с простых страниц вроде этой, потом пробовал делать копии известных сайтов (например, главную страницу Google), затем делал сайты для друзей. Главное - практиковаться каждый день и делать перерывы, чтобы не выгореть!</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Что делать, когда сайт готов?</h2>
+            
+            <p>Когда ваш сайт готов, его нужно разместить в интернете. Есть несколько способов:</p>
+            
+            <ol>
+                <li><strong>Бесплатный хостинг GitHub Pages</strong> - отлично подходит для простых сайтов (я именно так разместил этот сайт)</li>
+                <li><strong>Бесплатный хостинг от Netlify или Vercel</strong> - тоже хорошие варианты</li>
+                <li><strong>Платный хостинг</strong> - если нужен более серьёзный проект</li>
+                <li><strong>Локальный сервер</strong> - можно просто показывать сайт с компьютера</li>
+            </ol>
+            
+            <p>Для GitHub Pages нужно:</p>
+            <ol>
+                <li>Создать аккаунт на GitHub</li>
+                <li>Создать новый репозиторий</li>
+                <li>Загрузить файлы вашего сайта</li>
+                <li>Включить GitHub Pages в настройках репозитория</li>
+            </ol>
+            
+            <p>Это звучит сложно, но на самом деле это просто! В интернете много инструкций.</p>
+        </section>
+        
+        <footer>
+            <p>Этот сайт создан как учебный проект.</p>
+            <p>Проект выполнил ученик 7б класса Шеповалов Елисей</p>
+        </footer>
+    </div>
+</body>
+</html>

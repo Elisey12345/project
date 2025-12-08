@@ -1,0 +1,494 @@
+/* Добавьте этот CSS в тег <style> вместо старого */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.7;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Анимированный гиф-фон с эффектом параллакса */
+.background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif') repeat;
+    opacity: 0.08;
+    z-index: -1;
+    animation: subtleMove 20s infinite linear;
+}
+
+@keyframes subtleMove {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(-10px, -10px); }
+    100% { transform: translate(0, 0); }
+}
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративные элементы */
+.container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #4CAF50, #8BC34A, #CDDC39);
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%234CAF50" opacity="0.2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+    background-size: contain;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 2px dashed rgba(76, 175, 80, 0.3);
+    position: relative;
+}
+
+h1 {
+    color: #2E7D32;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: inline-block;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #4CAF50, transparent);
+}
+
+h2 {
+    color: #388E3C;
+    margin: 35px 0 20px 0;
+    padding: 10px 0 10px 20px;
+    border-left: 6px solid #4CAF50;
+    background: linear-gradient(90deg, rgba(76, 175, 80, 0.1), transparent);
+    border-radius: 0 10px 10px 0;
+    transition: all 0.3s ease;
+}
+
+h2:hover {
+    transform: translateX(5px);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    color: #43A047;
+    margin: 25px 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px dotted #C8E6C9;
+    display: inline-block;
+}
+
+p {
+    margin-bottom: 20px;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+.steps {
+    background: linear-gradient(145deg, #f8fff8, #e8f5e9);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 25px 0;
+    border: 1px solid #C8E6C9;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.steps::before {
+    content: '📝';
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    background: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.step {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-left: 4px solid #4CAF50;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.step:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.code-box {
+    background: linear-gradient(145deg, #2d2d2d, #1a1a1a);
+    color: #f8f8f2;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: 'Courier New', monospace;
+    margin: 20px 0;
+    overflow-x: auto;
+    font-size: 15px;
+    border: 1px solid #444;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.code-box::before {
+    content: 'Код';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 3px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-family: Arial, sans-serif;
+}
+
+.important {
+    background: linear-gradient(145deg, #e8f5e9, #c8e6c9);
+    border-left: 5px solid #4CAF50;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.1);
+    position: relative;
+}
+
+.important::before {
+    content: '❗';
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tip {
+    background: linear-gradient(145deg, #fffde7, #fff9c4);
+    border-left: 5px solid #FFD600;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(255, 214, 0, 0.1);
+    position: relative;
+}
+
+.tip::before {
+    content: '💡';
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+ul, ol {
+    margin-left: 30px;
+    margin-bottom: 25px;
+}
+
+li {
+    margin-bottom: 12px;
+    padding-left: 10px;
+    position: relative;
+}
+
+li::before {
+    content: '▸';
+    color: #4CAF50;
+    position: absolute;
+    left: -15px;
+}
+
+a {
+    color: #1B5E20;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #4CAF50;
+    transition: width 0.3s ease;
+}
+
+a:hover {
+    color: #4CAF50;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+.resources {
+    background: linear-gradient(145deg, #e3f2fd, #bbdefb);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 35px;
+    border: 1px solid #90CAF9;
+    position: relative;
+    overflow: hidden;
+}
+
+.resources::before {
+    content: '📚';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 3rem;
+    opacity: 0.1;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 2px dashed #ccc;
+    font-size: 15px;
+    color: #666;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 25px;
+    border-radius: 15px;
+}
+
+.my-note {
+    background: linear-gradient(145deg, #fff3e0, #ffcc80);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 25px 0;
+    border: 1px solid #FFB74D;
+    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.1);
+    position: relative;
+}
+
+.my-note::before {
+    content: '✏️';
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    margin: 10px 8px;
+    font-size: 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: all 0.5s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(76, 175, 80, 0.4);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+nav {
+    margin: 25px 0;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 12px;
+    text-decoration: none;
+}
+
+/* Анимации появления элементов */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.step, .code-box, .important, .tip, .resources, .my-note {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.step:nth-child(1) { animation-delay: 0.1s; }
+.step:nth-child(2) { animation-delay: 0.2s; }
+.step:nth-child(3) { animation-delay: 0.3s; }
+.code-box:nth-of-type(1) { animation-delay: 0.4s; }
+.code-box:nth-of-type(2) { animation-delay: 0.5s; }
+.code-box:nth-of-type(3) { animation-delay: 0.6s; }
+
+/* Стили для выделения текста */
+::selection {
+    background-color: rgba(76, 175, 80, 0.3);
+    color: #1B5E20;
+}
+
+/* Стили для скроллбара */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #4CAF50, #2E7D32);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #2E7D32, #1B5E20);
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px 20px;
+        margin: 15px auto;
+        border-radius: 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        padding-left: 15px;
+        margin: 25px 0 15px 0;
+    }
+    
+    .code-box {
+        font-size: 14px;
+        padding: 15px;
+    }
+    
+    .btn {
+        display: block;
+        margin: 10px auto;
+        width: 80%;
+        text-align: center;
+    }
+    
+    nav a {
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+/* Эффект пульсации для заголовка */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+h1 {
+    animation: pulse 3s infinite;
+}
+
+/* Эффект мигания для кнопок */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
+}
+
+.btn {
+    animation: blink 2s infinite;
+}
+li {
+    text-decoration: none;
+}
