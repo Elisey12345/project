@@ -46,8 +46,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-
-/* Декоративные элементы */
 .container::before {
     content: '';
     position: absolute;
@@ -408,14 +406,10 @@ nav a {
 .code-box:nth-of-type(1) { animation-delay: 0.4s; }
 .code-box:nth-of-type(2) { animation-delay: 0.5s; }
 .code-box:nth-of-type(3) { animation-delay: 0.6s; }
-
-/* Стили для выделения текста */
 ::selection {
     background-color: rgba(76, 175, 80, 0.3);
     color: #1B5E20;
 }
-
-/* Стили для скроллбара */
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -468,8 +462,6 @@ nav a {
         margin: 10px auto;
     }
 }
-
-/* Эффект пульсации для заголовка */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.02); }
@@ -479,8 +471,6 @@ nav a {
 h1 {
     animation: pulse 3s infinite;
 }
-
-/* Эффект мигания для кнопок */
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.8; }
@@ -491,4 +481,7 @@ h1 {
 }
 li {
     text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
 }
