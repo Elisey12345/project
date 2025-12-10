@@ -379,8 +379,6 @@ nav a {
     margin: 0 12px;
     text-decoration: none;
 }
-
-/* Анимации появления элементов */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -423,8 +421,6 @@ nav a {
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(to bottom, #2E7D32, #1B5E20);
 }
-
-/* Мобильная адаптация */
 @media (max-width: 768px) {
     .container {
         padding: 25px 20px;
